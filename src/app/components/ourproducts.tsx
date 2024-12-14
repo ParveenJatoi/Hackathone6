@@ -22,16 +22,19 @@ const OurProducts = () => {
                 <span className="line-through">${card.previousPrice}</span>
               </div>
             </div>
-            <button className="group-hover:bg-red-600 group-hover:text-white bg-white text-black px-6 py-3 rounded-md absolute bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity scale-105">
-              Add to Cart
-            </button>
-            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="text-white">Share</span>
-              <span className="text-white">|</span>
-              <span className="text-white">Compare</span>
-              <span className="text-white">|</span>
-              <span className="text-white">Like</span>
+
+             {/* Hover Overlay */}
+             <div className="absolute inset-0 bg-gray-800 bg-opacity-50 opacity-0 group-hover:opacity-100 transition flex flex-col justify-center items-center">
+              <button className="bg-white text-black px-4 py-2 rounded-md mb-4 shadow hover:shadow-lg">
+                Add to Cart
+              </button>
+              <div className="flex space-x-4 text-white">
+                <span className="cursor-pointer hover:text-gray-300">🔗 Share</span>
+                <span className="cursor-pointer hover:text-gray-300">🔄 Compare</span>
+                <span className="cursor-pointer hover:text-gray-300">❤️ Like</span>
+              </div>
             </div>
+           
             <div className="absolute inset-0 bg-gray-400 opacity-0 group-hover:opacity-70 transition-opacity"></div>
           </div>
         ))}

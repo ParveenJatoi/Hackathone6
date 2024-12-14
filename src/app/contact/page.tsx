@@ -1,13 +1,12 @@
 
-
-// pages/shop.js
 import React from 'react';
 import Image from 'next/image';
+import ContactForm from '../components/contactform';
 
 const Contact = () => {
   return (
     <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: "url('/heropic4.jpg')" }}>
-      <div className="flex items-center justify-end h-full w-full px-8 md:px-16 lg:px-24">
+      <div className="flex items-center justify-end h-full w-full px-8 md:px-16 lg:px-24 ">
         {/* Text Content */}
 
         <div className="mr-96 text-black">
@@ -25,6 +24,7 @@ const Contact = () => {
           <p className="mt-2 text-[16px] md:text-[20px] font-medium">Home &gt; Contact</p>
         </div>
       </div>
+      <ContactForm/>
     </div>
   );
 };
