@@ -1,49 +1,167 @@
 
-import React from "react";
+// import React from "react";
+// import Image from "next/image";
+// import { FiSearch, FiHeart, FiShoppingCart } from "react-icons/fi";
+// import Link from "next/link";
+
+// const Header = () => {
+//   return (
+//     <header className="bg-white shadow-md">
+//       <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-12">
+//         {/* Logo (Image) */}
+//         <div className="flex items-center  font-bold space-x-2">
+//           <Image
+//             src="/logo.png" // Replace with your logo path
+//             alt="Furniro Logo"
+//             width={70}
+//             height={44}
+//             className="object-contain"
+//           /><h1 className="text-2xl md:text-3xl font-extrabold text-gray-800">
+//             Furniro</h1>
+//         </div>
+
+//         {/* Navbar Links */}
+//         <div className="hidden md:flex space-x-10 text-gray-600 text-lg font-medium">
+//           <Link
+//             href="/"
+//             className="hover:text-yellow-500 transition-all duration-300"
+//           >
+//             Home
+//           </Link>
+//           <Link
+//             href="/shop"
+//             className="hover:text-yellow-500 transition-all duration-300"
+//           >
+//             Shop
+//           </Link>
+      
+//            <Link href="/blog"
+//             className="hover:text-yellow-500 transition-all duration-300"
+//           >
+//             Blog
+//           </Link>
+//           <Link
+//             href="/contact"
+//             className="hover:text-yellow-500 transition-all duration-300"
+//           >
+//             Contact
+//           </Link>
+//         </div>
+
+//         {/* Icons Section */}
+//         <div className="flex items-center space-x-8 text-gray-600">
+//           {/* Search Icon */}
+//           <button
+//             className="hover:text-yellow-500 transition-all duration-300"
+//             aria-label="Search"
+//           >
+//             <FiSearch size={22} />
+//           </button>
+
+//           {/* Wishlist Icon */}
+//           <button
+//             className="hover:text-yellow-500 transition-all duration-300"
+//             aria-label="Wishlist"
+//           >
+//             <FiHeart size={22} />
+//           </button>
+
+//           {/* Cart Icon */}
+//           <button
+//             className="hover:text-yellow-500 transition-all duration-300 relative"
+//             aria-label="Cart"
+//           >
+//             <FiShoppingCart size={22} />
+//             {/* Cart Badge */}
+//             <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1">
+//               3
+//             </span>
+//           </button>
+//         </div>
+
+//         {/* Mobile Menu */}
+//         <div className="md:hidden">
+//           <button
+//             className="hover:text-yellow-500 transition-all duration-300"
+//             aria-label="Mobile Menu"
+//           >
+//             <FiSearch size={22} />
+//           </button>
+//         </div>
+//       </div>
+
+//       {/* Mobile Navigation */}
+//       <nav className="flex flex-col items-center space-y-4 text-gray-600 md:hidden mt-4">
+//         <Link
+//           href="#home"
+//           className="hover:text-yellow-500 transition-all duration-300"
+//         >
+//           Home
+//         </Link>
+//         <Link
+//           href="#shop"
+//           className="hover:text-yellow-500 transition-all duration-300"
+//         >
+//           Shop
+//         </Link>
+//         <Link
+//           href="#blog"
+//           className="hover:text-yellow-500 transition-all duration-300"
+//         >
+//           Blog
+//         </Link>
+//         <Link
+//           href="#contact"
+//           className="hover:text-yellow-500 transition-all duration-300"
+//         >
+//           Contact
+//         </Link>
+//       </nav>
+//     </header>
+//   );
+// };
+
+// export default Header;
+
+
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
-import { FiSearch, FiHeart, FiShoppingCart } from "react-icons/fi";
+import { FiSearch, FiHeart, FiShoppingCart, FiMenu, FiX } from "react-icons/fi";
 import Link from "next/link";
 
 const Header = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <header className="bg-white shadow-md">
       <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-12">
-        {/* Logo (Image) */}
-        <div className="flex items-center  font-bold space-x-2">
+        {/* Logo Section */}
+        <div className="flex items-center font-bold space-x-2">
           <Image
-            src="/logo.png" // Replace with your logo path
+            src="/logo.png"
             alt="Furniro Logo"
             width={70}
             height={44}
             className="object-contain"
-          /><h1 className="text-2xl md:text-3xl font-extrabold text-gray-800">
-            Furniro</h1>
+          />
+          <h1 className="text-2xl md:text-3xl font-extrabold text-gray-800">
+            Furniro
+          </h1>
         </div>
 
-        {/* Navbar Links */}
+        {/* Navbar Links (Desktop) */}
         <div className="hidden md:flex space-x-10 text-gray-600 text-lg font-medium">
-          <Link
-            href="/"
-            className="hover:text-yellow-500 transition-all duration-300"
-          >
+          <Link href="/" className="hover:text-yellow-500 transition-all duration-300">
             Home
           </Link>
-          <Link
-            href="/shop"
-            className="hover:text-yellow-500 transition-all duration-300"
-          >
+          <Link href="/shop" className="hover:text-yellow-500 transition-all duration-300">
             Shop
           </Link>
-      
-           <Link href="/blog"
-            className="hover:text-yellow-500 transition-all duration-300"
-          >
+          <Link href="/blog" className="hover:text-yellow-500 transition-all duration-300">
             Blog
           </Link>
-          <Link
-            href="/contact"
-            className="hover:text-yellow-500 transition-all duration-300"
-          >
+          <Link href="/contact" className="hover:text-yellow-500 transition-all duration-300">
             Contact
           </Link>
         </div>
@@ -51,18 +169,12 @@ const Header = () => {
         {/* Icons Section */}
         <div className="flex items-center space-x-8 text-gray-600">
           {/* Search Icon */}
-          <button
-            className="hover:text-yellow-500 transition-all duration-300"
-            aria-label="Search"
-          >
+          <button className="hover:text-yellow-500 transition-all duration-300" aria-label="Search">
             <FiSearch size={22} />
           </button>
 
           {/* Wishlist Icon */}
-          <button
-            className="hover:text-yellow-500 transition-all duration-300"
-            aria-label="Wishlist"
-          >
+          <button className="hover:text-yellow-500 transition-all duration-300" aria-label="Wishlist">
             <FiHeart size={22} />
           </button>
 
@@ -77,46 +189,35 @@ const Header = () => {
               3
             </span>
           </button>
-        </div>
 
-        {/* Mobile Menu */}
-        <div className="md:hidden">
+          {/* Mobile Menu Toggle */}
           <button
-            className="hover:text-yellow-500 transition-all duration-300"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden hover:text-yellow-500 transition-all duration-300"
             aria-label="Mobile Menu"
           >
-            <FiSearch size={22} />
+            {mobileMenuOpen ? <FiX size={22} /> : <FiMenu size={22} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Navigation */}
-      <nav className="flex flex-col items-center space-y-4 text-gray-600 md:hidden mt-4">
-        <Link
-          href="#home"
-          className="hover:text-yellow-500 transition-all duration-300"
-        >
-          Home
-        </Link>
-        <Link
-          href="#shop"
-          className="hover:text-yellow-500 transition-all duration-300"
-        >
-          Shop
-        </Link>
-        <Link
-          href="#blog"
-          className="hover:text-yellow-500 transition-all duration-300"
-        >
-          Blog
-        </Link>
-        <Link
-          href="#contact"
-          className="hover:text-yellow-500 transition-all duration-300"
-        >
-          Contact
-        </Link>
-      </nav>
+      {mobileMenuOpen && (
+        <nav className="flex flex-col items-center space-y-4 text-gray-600 md:hidden mt-4">
+          <Link href="/" className="hover:text-yellow-500 transition-all duration-300">
+            Home
+          </Link>
+          <Link href="/shop" className="hover:text-yellow-500 transition-all duration-300">
+            Shop
+          </Link>
+          <Link href="/blog" className="hover:text-yellow-500 transition-all duration-300">
+            Blog
+          </Link>
+          <Link href="/contact" className="hover:text-yellow-500 transition-all duration-300">
+            Contact
+          </Link>
+        </nav>
+      )}
     </header>
   );
 };
