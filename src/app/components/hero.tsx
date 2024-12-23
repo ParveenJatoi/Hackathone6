@@ -1,4 +1,5 @@
 
+
 // "use client"
 // import React from "react";
 
@@ -52,7 +53,9 @@
 // };
 
 // export default Hero;
-"use client";
+
+
+"use client"
 import React from "react";
 
 const Hero = () => {

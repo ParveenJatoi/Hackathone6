@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const ContactForm = () => {
@@ -8,7 +9,7 @@ const ContactForm = () => {
         <div className="space-y-5">
           <h2 className="text-3xl font-bold">Get In Touch With Us</h2>
           <p className="text-gray-500">
-            For more information about our products and services, please feel free to drop us an email. Our staff is always ready to help you out. Dont hesitate!
+            For more information about our products and services, please feel free to drop us an email. Our staff is always ready to help you out. Dont hesitate
           </p>
           <div className="space-y-3">
             <div className="flex items-start gap-3">
